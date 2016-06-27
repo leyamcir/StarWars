@@ -37,6 +37,8 @@
 		C0B77DE71D1C914600841BF3 /* chewie.caf in Resources */ = {isa = PBXBuildFile; fileRef = C0B77DC91D1C914600841BF3 /* chewie.caf */; };
 		C0B77DE81D1C914600841BF3 /* c3po.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C0B77DCA1D1C914600841BF3 /* c3po.jpg */; };
 		C0B77DE91D1C914600841BF3 /* c3po.caf in Resources */ = {isa = PBXBuildFile; fileRef = C0B77DCB1D1C914600841BF3 /* c3po.caf */; };
+		C0CE641D1D21D86300C19FE7 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CE641C1D21D86300C19FE7 /* CharacterViewController.swift */; };
+		C0CE641F1D21DD2500C19FE7 /* CharacterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0CE641E1D21DD2500C19FE7 /* CharacterViewController.xib */; };
 		C0E3D2EF1D19E59200E94484 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E3D2EE1D19E59200E94484 /* AppDelegate.swift */; };
 		C0E3D2F61D19E59200E94484 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0E3D2F51D19E59200E94484 /* Assets.xcassets */; };
 		C0E3D2F91D19E59200E94484 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0E3D2F71D19E59200E94484 /* LaunchScreen.storyboard */; };
@@ -80,6 +82,8 @@
 		C0B77DC91D1C914600841BF3 /* chewie.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = chewie.caf; sourceTree = "<group>"; };
 		C0B77DCA1D1C914600841BF3 /* c3po.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = c3po.jpg; sourceTree = "<group>"; };
 		C0B77DCB1D1C914600841BF3 /* c3po.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = c3po.caf; sourceTree = "<group>"; };
+		C0CE641C1D21D86300C19FE7 /* CharacterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
+		C0CE641E1D21DD2500C19FE7 /* CharacterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharacterViewController.xib; sourceTree = "<group>"; };
 		C0E3D2EB1D19E59200E94484 /* StarWars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E3D2EE1D19E59200E94484 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0E3D2F51D19E59200E94484 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,6 +110,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C0CE641B1D21D82D00C19FE7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C0CE641C1D21D86300C19FE7 /* CharacterViewController.swift */,
+				C0CE641E1D21DD2500C19FE7 /* CharacterViewController.xib */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		C0E3D2E21D19E59100E94484 = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +153,7 @@
 		C0E3D3001D19EDB100E94484 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				C0CE641B1D21D82D00C19FE7 /* Controllers */,
 				C0E3D3021D19EDDE00E94484 /* Models */,
 			);
 			name = App;
@@ -285,6 +299,7 @@
 				C0B77DE91D1C914600841BF3 /* c3po.caf in Resources */,
 				C0B77DD81D1C914600841BF3 /* obiwan.caf in Resources */,
 				C0B77DE21D1C914600841BF3 /* jabba.caf in Resources */,
+				C0CE641F1D21DD2500C19FE7 /* CharacterViewController.xib in Resources */,
 				C0B77DD21D1C914600841BF3 /* regularCharacters.json in Resources */,
 				C0B77DDE1D1C914600841BF3 /* leia.caf in Resources */,
 				C0B77DDA1D1C914600841BF3 /* motti.caf in Resources */,
@@ -303,6 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0CE641D1D21D86300C19FE7 /* CharacterViewController.swift in Sources */,
 				C0E4AB861D1C7E0A007A95DD /* ForceSensitive.swift in Sources */,
 				C0E4AB831D1C6509007A95DD /* Affiliations.swift in Sources */,
 				C0E9AC8A1D21B9D000783F86 /* Foundation.swift in Sources */,
