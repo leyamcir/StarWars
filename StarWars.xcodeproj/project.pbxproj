@@ -44,6 +44,7 @@
 		C0E4AB831D1C6509007A95DD /* Affiliations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E4AB821D1C6509007A95DD /* Affiliations.swift */; };
 		C0E4AB861D1C7E0A007A95DD /* ForceSensitive.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E4AB851D1C7E0A007A95DD /* ForceSensitive.swift */; };
 		C0E4AB881D1C8EAC007A95DD /* StarWarsUniverse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E4AB871D1C8EAC007A95DD /* StarWarsUniverse.swift */; };
+		C0E9AC861D21AFFA00783F86 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9AC851D21AFFA00783F86 /* Errors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,7 @@
 		C0E4AB841D1C69AC007A95DD /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		C0E4AB851D1C7E0A007A95DD /* ForceSensitive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForceSensitive.swift; sourceTree = "<group>"; };
 		C0E4AB871D1C8EAC007A95DD /* StarWarsUniverse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarWarsUniverse.swift; sourceTree = "<group>"; };
+		C0E9AC851D21AFFA00783F86 /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 				C0E4AB821D1C6509007A95DD /* Affiliations.swift */,
 				C0E4AB851D1C7E0A007A95DD /* ForceSensitive.swift */,
 				C0E4AB871D1C8EAC007A95DD /* StarWarsUniverse.swift */,
+				C0E9AC851D21AFFA00783F86 /* Errors.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				C0E4AB831D1C6509007A95DD /* Affiliations.swift in Sources */,
 				C0E3D3041D19EE6200E94484 /* StarWarsCharacter.swift in Sources */,
 				C0E3D2EF1D19E59200E94484 /* AppDelegate.swift in Sources */,
+				C0E9AC861D21AFFA00783F86 /* Errors.swift in Sources */,
 				C0E4AB881D1C8EAC007A95DD /* StarWarsUniverse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
