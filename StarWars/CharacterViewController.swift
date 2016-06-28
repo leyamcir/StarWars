@@ -42,6 +42,11 @@ class CharacterViewController: UIViewController {
     }
     
     @IBAction func displayWiki(sender: AnyObject) {
+        // Create wikiVC
+        let wVC = WikiViewController(model: model)
+        
+        // Push to NavigationController
+        navigationController?.pushViewController(wVC, animated: true)
     }
     
     
