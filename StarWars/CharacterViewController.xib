@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CharacterViewController" customModule="StarWars">
             <connections>
+                <outlet property="photoView" destination="Rga-YU-o29" id="TCo-Ju-lku"/>
                 <outlet property="view" destination="iN0-l3-epB" id="FHj-Rz-0FJ"/>
             </connections>
         </placeholder>
@@ -14,6 +15,21 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="IEf-Bu-snZ">
+                    <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <items>
+                        <barButtonItem title="Item" systemItem="play" id="Cdg-PO-zmz"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="zMN-S2-wRd"/>
+                        <barButtonItem title="Wiki" id="atM-hN-rEB"/>
+                    </items>
+                </toolbar>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Rga-YU-o29">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <point key="canvasLocation" x="259" y="303"/>
         </view>
