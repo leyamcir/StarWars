@@ -11,15 +11,8 @@ import UIKit
 class CharacterViewController: UIViewController {
     
     // MARK: - Properties
-
     @IBOutlet weak var photoView: UIImageView!
     
-    // MARK: - Actions
-    @IBAction func playSound(sender: AnyObject) {
-    }
-    
-    @IBAction func displayWiki(sender: AnyObject) {
-    }
     
     // MARK: - Initialization
     let model: StarWarsCharacter
@@ -29,13 +22,43 @@ class CharacterViewController: UIViewController {
         super.init(nibName: "CharacterViewController", bundle: nil)
     }
     
+    func syncModelWithView() {
+        // Photo
+        photoView.image = model.photo
+        
+        // Alias
+        title = model.name
+        
+    }
+    
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    // MARK: - Actions
+    @IBAction func playSound(sender: AnyObject) {
+    }
+    
+    @IBAction func displayWiki(sender: AnyObject) {
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Before view has its dimensions
+        // Only once
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // Just before showing (after viewDidLoad)
+        // Possibly more than once
+       
+        syncModelWithView()
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -46,7 +69,4 @@ class CharacterViewController: UIViewController {
         super.viewDidDisappear(animated)
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-    }
 }
