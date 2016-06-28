@@ -24,8 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let model = StarWarsCharacter(firstName: "Jabba", lastName: "Desilijic Tiure", 
             alias: "Jabba the Hutt", soundData: jabbaSound, 
             photo: UIImage(named: "jabba.jpg")!, 
-            url: NSURL(string: "https://en.wikipedia.org/wiki/Jabba_the_Hutt"!, 
-            affiliation: .jabbaCrimeEmpire) )
+            url: NSURL(string: "https://en.wikipedia.org/wiki/Jabba_the_Hutt")!,
+            affiliation: .jabbaCriminalEmpire)
         
         // Create window
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
