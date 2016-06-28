@@ -9,8 +9,19 @@
 import UIKit
 
 class CharacterViewController: UIViewController {
+    
+    // MARK: - Properties
 
     @IBOutlet weak var photoView: UIImageView!
+    
+    // MARK: - Actions
+    @IBAction func playSound(sender: AnyObject) {
+    }
+    
+    @IBAction func displayWiki(sender: AnyObject) {
+    }
+    
+    // MARK: - Initialization
     let model: StarWarsCharacter
     
     init(model: StarWarsCharacter) {
