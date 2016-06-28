@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C04F1BF71D231C3000424B2B /* WikiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04F1BF51D231C3000424B2B /* WikiViewController.swift */; };
 		C04F1BF81D231C3000424B2B /* WikiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C04F1BF61D231C3000424B2B /* WikiViewController.xib */; };
+		C04F1BFA1D232D3200424B2B /* UniverseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04F1BF91D232D3200424B2B /* UniverseViewController.swift */; };
 		C0B77DCC1D1C914600841BF3 /* yoda.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C0B77DAE1D1C914600841BF3 /* yoda.jpg */; };
 		C0B77DCD1D1C914600841BF3 /* yoda.caf in Resources */ = {isa = PBXBuildFile; fileRef = C0B77DAF1D1C914600841BF3 /* yoda.caf */; };
 		C0B77DCE1D1C914600841BF3 /* vader.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C0B77DB01D1C914600841BF3 /* vader.jpg */; };
@@ -56,6 +57,7 @@
 /* Begin PBXFileReference section */
 		C04F1BF51D231C3000424B2B /* WikiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiViewController.swift; sourceTree = "<group>"; };
 		C04F1BF61D231C3000424B2B /* WikiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WikiViewController.xib; sourceTree = "<group>"; };
+		C04F1BF91D232D3200424B2B /* UniverseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniverseViewController.swift; sourceTree = "<group>"; };
 		C0B77DAE1D1C914600841BF3 /* yoda.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yoda.jpg; sourceTree = "<group>"; };
 		C0B77DAF1D1C914600841BF3 /* yoda.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = yoda.caf; sourceTree = "<group>"; };
 		C0B77DB01D1C914600841BF3 /* vader.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = vader.jpg; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				C0CE641E1D21DD2500C19FE7 /* CharacterViewController.xib */,
 				C04F1BF51D231C3000424B2B /* WikiViewController.swift */,
 				C04F1BF61D231C3000424B2B /* WikiViewController.xib */,
+				C04F1BF91D232D3200424B2B /* UniverseViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				C0E9AC881D21B1E600783F86 /* JSONProcessing.swift in Sources */,
 				C04F1BF71D231C3000424B2B /* WikiViewController.swift in Sources */,
 				C0E4AB881D1C8EAC007A95DD /* StarWarsUniverse.swift in Sources */,
+				C04F1BFA1D232D3200424B2B /* UniverseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
