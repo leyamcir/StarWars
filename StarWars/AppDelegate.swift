@@ -18,16 +18,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         // Create model instance
+        let jabbaUrl = NSBundle.mainBundle().URLForResource("jabba.caf")!
+        let jabbaSound = NSData(contentsOfURL: jabbaUrl)!
+        
+        let model = StarWarsCharacter(firstName: "Jabba", lastName: "Desilijic Tiure", 
+            alias: "Jabba the Hutt", soundData: jabbaSound, 
+            photo: UIImage(named: "jabba.jpg")!, 
+            url: NSURL(string: "https://en.wikipedia.org/wiki/Jabba_the_Hutt"!, 
+            affiliation: .jabbaCrimeEmpire) )
         
         // Create window
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         // Create VC
+        let vc = CharacterViewController(model: model)
         
         // Insert in navigation
+        let nav = UINavigationController(rootViewController: vc)
         
         // Assign nav as rootVC
+        window?.rootViewController = nav
         
         // Make visible & key to window
+        window?.makeKeyAndVisible()
+        
         return true
     }
 
