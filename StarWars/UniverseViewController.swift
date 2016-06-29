@@ -9,7 +9,21 @@
 import UIKit
 
 class UniverseViewController: UITableViewController {
+    
+    // MARK: - Properties
+    let model : StarWarsUniverse
+    // cannot use this let if using storyboard
+  
+    // MARK - Initialization
+    init (model: StarWarsUniverse) {
+        self.model = model
+        super.init(nibName: nil, bundle: nil)
+    }
 
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,24 +42,45 @@ class UniverseViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        // Affiliations in universe number
+        return model.affiliationCount
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        // Characters number in affiliation
+        
+        // Can create function inside function
+        
+        
+        return model.characterCount(forAffiliation: getAffiliation(forSection: section))
+        
+        
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
-        return cell
+        
+        // Cell type
+        let cellId = "StarWarsCell"
+        
+        let character = model.character(atIndex: indexPath.row, forAffiliation: getAffiliation(forSection: indexPath.section))
+        
+        // Create cell
+        var cell = tableView.dequeueReusableCellWithIdentifier(cellId)
+        
+        if cell == nil {
+            // Optional empty, create
+            cell = UITableViewCell(style: .Subtitle, reuseIdentifier: cellId)
+        }
+        
+        // Syncronyze character and cell
+        cell?.imageView?.image = character.photo
+        cell?.textLabel?.text = character.alias
+        cell?.detailTextLabel?.text = character.name
+        
+        return cell!
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -91,5 +126,24 @@ class UniverseViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func getAffiliation(forSection section: Int) -> StarWarsAffiliation {
+        var aff : StarWarsAffiliation = .unknown
+        
+        switch section {
+        case 0:
+            aff = .galacticEmpire
+        case 1:
+            aff = .rebelAlliance
+        case 2:
+            aff = .firstOrder
+        case 3:
+            aff = .jabbaCriminalEmpire
+        default:
+            aff = .unknown
+        }
+        
+        return aff
+    }
 
 }
