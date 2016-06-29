@@ -8,13 +8,13 @@
 
 import Foundation
 
-enum StarWarsAffiliation {
+enum StarWarsAffiliation : String {
     
-    case galacticEmpire
-    case rebelAlliance
-    case firstOrder
-    case jabbaCriminalEmpire
-    case unknown
+    case galacticEmpire = "Galactic Empire"
+    case rebelAlliance = "Rebel Alliance"
+    case firstOrder = "First Order"
+    case jabbaCriminalEmpire = "Jabba's Criminal Empire"
+    case unknown = "Unknown"
 
     static func byName(name: String) -> StarWarsAffiliation {
         let aff: StarWarsAffiliation
