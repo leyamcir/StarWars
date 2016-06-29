@@ -52,7 +52,12 @@ class WikiViewController: UIViewController, UIWebViewDelegate {
         
         // Subscribe notification
         let nc = NSNotificationCenter.defaultCenter()
-        nc.addObserver(self, selector: #selector(characterDidChange), name: CharacterDidChangeNotification, object: nil)
+        
+        // My version
+        nc.addObserver(self, selector: "characterDidChange", name: CharacterDidChangeNotification, object: nil)
+        
+        // New version
+        //nc.addObserver(self, selector: @selector(characterDidChange), name: CharacterDidChangeNotification, object: nil)
         
         syncModelWithView()
     }
@@ -61,6 +66,7 @@ class WikiViewController: UIViewController, UIWebViewDelegate {
         super.viewWillDisappear(animated)
         
         // Unsubscribe from all notifications
+        let nc = NSNotificationCenter.defaultCenter()
         nc.removeObserver(self)
         
     }

@@ -15,7 +15,7 @@ class CharacterViewController: UIViewController {
     
     
     // MARK: - Initialization
-    let model: StarWarsCharacter
+    var model: StarWarsCharacter
     
     init(model: StarWarsCharacter) {
         self.model = model
@@ -77,7 +77,7 @@ class CharacterViewController: UIViewController {
 }
 
 
-extiension CharacterViewController: UniverseViewControllerDelegate {
+extension CharacterViewController: UniverseViewControllerDelegate {
     func universeViewController(vc: UniverseViewController,
         didSelectCharacter character: StarWarsCharacter) {
             model = character

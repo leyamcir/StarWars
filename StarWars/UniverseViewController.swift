@@ -8,8 +8,8 @@
 
 import UIKit
 
-let CharacterDidChangeNotification = "Selected Character ..."
-let CharacterKey = 0
+let CharacterDidChangeNotification = "Selected Character did change"
+let CharacterKey = "key"
 
 class UniverseViewController: UITableViewController {
     
@@ -22,6 +22,7 @@ class UniverseViewController: UITableViewController {
     // MARK - Initialization
     init (model: StarWarsUniverse) {
         self.model = model
+        
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -30,12 +31,14 @@ class UniverseViewController: UITableViewController {
     }
     
     // MARK: - Table view delegate
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView,
+        didSelectRowAtIndexPath indexPath: NSIndexPath) {
+            
         // Get character
         let char = character(forIndexPath: indexPath)
         
         // Push
-        delegate?.universeviewController(self, didSelectCharacter: char)
+        delegate?.universeViewController(self, didSelectCharacter: char)
         
         // Send notification info
         let nc = NSNotificationCenter.defaultCenter()
