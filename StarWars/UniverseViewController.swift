@@ -24,6 +24,15 @@ class UniverseViewController: UITableViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Table view delegate
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        // Get character
+        
+        // Create Character VC
+        
+        // Push
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -79,6 +88,11 @@ class UniverseViewController: UITableViewController {
         cell?.detailTextLabel?.text = character.name
         
         return cell!
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        return getAffiliation(forSection: section).rawValue
     }
     
 
@@ -147,3 +161,11 @@ class UniverseViewController: UITableViewController {
     }
 
 }
+
+
+protocol UniverseViewControllerDelegate {
+
+   // func
+}
+
+

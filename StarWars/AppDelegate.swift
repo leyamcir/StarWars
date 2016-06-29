@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         // Create model instance
+        /*
         let jabbaUrl = NSBundle.mainBundle().URLForResource("jabba.caf")!
         let jabbaSound = NSData(contentsOfURL: jabbaUrl)!
         
@@ -26,6 +27,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             photo: UIImage(named: "jabba.jpg")!, 
             url: NSURL(string: "https://en.wikipedia.org/wiki/Jabba_the_Hutt")!,
             affiliation: .jabbaCriminalEmpire)
+*/
+        do {
+            var json = try loadFromLocalFile(fileName: "regularCharacters.json")
+            json.appendContentsOf(try loadFromLocalFile(fileName: "forceSensitives.json"))
+            //json.appendString(try loadFromLocalFile(fileName: "forceSensitives.json"))
+            
+            var chars = [StarWarsCharacter]()
+            for dict in json {
+                do {
+                    let char = try decode(starWarsCharacter: dict)
+                    chars.append(char)
+                } catch {
+                    print ("Error al procesar \(dict)")
+                }
+            }
+                
+                
+            // can create model
+            let model = StarWarsUniverse(characteres: chars)
+                
+                // Create VC
+            let uVC = UniverseViewController(model: model)
+                
+            // Put in nav
+            let nav = UINavigationController(rootViewController: uVC)
+            
+            // Assign nav as rootVC
+            window?.rootViewController = nav
+            
+            
+            // Make visible & key to window
+            window?.makeKeyAndVisible()
+                
+        } catch {
+            fatalError("Error while loading json")
+        }
+            /*
         
         // Create window
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
@@ -38,9 +76,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Assign nav as rootVC
         window?.rootViewController = nav
+
         
         // Make visible & key to window
         window?.makeKeyAndVisible()
+        */
         
         return true
     }
