@@ -56,6 +56,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Assign nav as rootVC
             window?.rootViewController = nav
             
+            // Assign delegates
+            //uVC.delegate = charVC
+            
             
             // Make visible & key to window
             window?.makeKeyAndVisible()

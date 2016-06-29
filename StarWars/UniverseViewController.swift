@@ -13,6 +13,8 @@ class UniverseViewController: UITableViewController {
     // MARK: - Properties
     let model : StarWarsUniverse
     // cannot use this let if using storyboard
+    
+    var delegate : UniverseViewControllerDelegate?
   
     // MARK - Initialization
     init (model: StarWarsUniverse) {
@@ -27,10 +29,10 @@ class UniverseViewController: UITableViewController {
     // MARK: - Table view delegate
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // Get character
-        
-        // Create Character VC
+        let char = character(forIndexPath: indexPath)
         
         // Push
+        delegate?.universeviewController(self, didSelectCharacter: char)
     }
     
     override func viewDidLoad() {
@@ -159,13 +161,21 @@ class UniverseViewController: UITableViewController {
         
         return aff
     }
+    
+    
+    func character(forIndexPath indexPath: NSIndexPath) -> StarWarsCharacter {
+        
+        return model.character(atIndex: indexPath.row, forAffiliation: getAffiliation(forSection: indexPath.section))
+    }
 
 }
 
 
 protocol UniverseViewControllerDelegate {
 
-   // func
+    func universeViewController(vc : UniverseViewController, didSelectCharacter character: StarWarsCharacter)
+    
+    
 }
 
 
