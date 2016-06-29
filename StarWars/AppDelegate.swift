@@ -28,6 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             url: NSURL(string: "https://en.wikipedia.org/wiki/Jabba_the_Hutt")!,
             affiliation: .jabbaCriminalEmpire)
 */
+        // Create window
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
         do {
             var json = try loadFromLocalFile(fileName: "regularCharacters.json")
             json.appendContentsOf(try loadFromLocalFile(fileName: "forceSensitives.json"))
