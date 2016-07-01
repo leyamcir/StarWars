@@ -80,8 +80,11 @@ class CharacterViewController: UIViewController {
 extension CharacterViewController: UniverseViewControllerDelegate {
     func universeViewController(vc: UniverseViewController,
         didSelectCharacter character: StarWarsCharacter) {
+            
+            // Update model
             model = character
             
+            // Syncronize model with views
             syncModelWithView()
     }
 }

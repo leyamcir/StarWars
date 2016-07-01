@@ -17,9 +17,16 @@ class StarWarsUniverse {
     //MARK: - Properties
     var dict : StarWarsDictionary = StarWarsDictionary()
     
+    // Option with makeEmptyAffiliations static
+    //var dict : StarWarsDictionary
+    
     init (characteres chars: StarWarsArray) {
+        
         // Create empty dictionary
         dict = makeEmptyAffiliations()
+        
+        // Option with makeEmptyAffiliations static
+        //dict = StarWarsUniverse.makeEmptyAffiliations()
         
         // Iterate array and assign depending on affiliation
         for each in chars  {

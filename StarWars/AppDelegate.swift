@@ -28,39 +28,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             url: NSURL(string: "https://en.wikipedia.org/wiki/Jabba_the_Hutt")!,
             affiliation: .jabbaCriminalEmpire)
 */
+        
         // Create window
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         do {
             var json = try loadFromLocalFile(fileName: "regularCharacters.json")
+            
             json.appendContentsOf(try loadFromLocalFile(fileName: "forceSensitives.json"))
-            //json.appendString(try loadFromLocalFile(fileName: "forceSensitives.json"))
             
             var chars = [StarWarsCharacter]()
+            
             for dict in json {
                 do {
                     let char = try decode(starWarsCharacter: dict)
                     chars.append(char)
                 } catch {
-                    print ("Error al procesar \(dict)")
+                    print ("Error processing \(dict)")
                 }
             }
-                
-                
+            
             // can create model
             let model = StarWarsUniverse(characteres: chars)
                 
-                // Create VC
+            // Create VC
             let uVC = UniverseViewController(model: model)
                 
             // Put in nav
-            let nav = UINavigationController(rootViewController: uVC)
+            let uNav = UINavigationController(rootViewController: uVC)
+            
+            // Create character VC
+            let charVC = CharacterViewController(model: model.character(atIndex: 0, forAffiliation: .rebelAlliance))
+            
+            // put in another navigation
+            let charNav = UINavigationController(rootViewController: charVC)
+            
+            // create splitview with two navs
+            let splitVC = UISplitViewController()
+            splitVC.viewControllers = [uNav, charNav]
             
             // Assign nav as rootVC
-            window?.rootViewController = nav
+            window?.rootViewController = splitVC
             
             // Assign delegates
-            //uVC.delegate = charVC
+            uVC.delegate = charVC
             
             
             // Make visible & key to window
@@ -69,8 +80,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch {
             fatalError("Error while loading json")
         }
-            /*
         
+        /*
         // Create window
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
@@ -83,7 +94,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Assign nav as rootVC
         window?.rootViewController = nav
 
-        
         // Make visible & key to window
         window?.makeKeyAndVisible()
         */
