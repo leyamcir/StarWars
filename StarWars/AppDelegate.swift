@@ -48,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }
             
-            // can create model
+            // Can ceate model
             let model = StarWarsUniverse(characteres: chars)
                 
             // Create VC
@@ -60,10 +60,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Create character VC
             let charVC = CharacterViewController(model: model.character(atIndex: 0, forAffiliation: .rebelAlliance))
             
-            // put in another navigation
+            // Put in another navigation
             let charNav = UINavigationController(rootViewController: charVC)
             
-            // create splitview with two navs
+            // Create splitview with two navs
             let splitVC = UISplitViewController()
             splitVC.viewControllers = [uNav, charNav]
             

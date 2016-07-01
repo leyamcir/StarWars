@@ -97,7 +97,6 @@
 		C0E3D2FA1D19E59200E94484 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0E3D3031D19EE6200E94484 /* StarWarsCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarWarsCharacter.swift; sourceTree = "<group>"; };
 		C0E4AB821D1C6509007A95DD /* Affiliations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Affiliations.swift; sourceTree = "<group>"; };
-		C0E4AB841D1C69AC007A95DD /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		C0E4AB851D1C7E0A007A95DD /* ForceSensitive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForceSensitive.swift; sourceTree = "<group>"; };
 		C0E4AB871D1C8EAC007A95DD /* StarWarsUniverse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarWarsUniverse.swift; sourceTree = "<group>"; };
 		C0E9AC851D21AFFA00783F86 /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
@@ -154,7 +153,6 @@
 				C0E3D2F51D19E59200E94484 /* Assets.xcassets */,
 				C0E3D2F71D19E59200E94484 /* LaunchScreen.storyboard */,
 				C0E3D2FA1D19E59200E94484 /* Info.plist */,
-				C0E4AB841D1C69AC007A95DD /* MyPlayground.playground */,
 			);
 			path = StarWars;
 			sourceTree = "<group>";

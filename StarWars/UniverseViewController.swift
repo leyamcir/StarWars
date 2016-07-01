@@ -40,7 +40,7 @@ class UniverseViewController: UITableViewController {
         // Push
         delegate?.universeViewController(self, didSelectCharacter: char)
         
-        // Send notification info
+        // Send same info via notifications
         let nc = NSNotificationCenter.defaultCenter()
         let notif = NSNotification(name: CharacterDidChangeNotification, object: self, userInfo: [CharacterKey: char])
         nc.postNotification(notif)
