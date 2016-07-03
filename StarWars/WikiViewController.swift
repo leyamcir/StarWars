@@ -92,7 +92,7 @@ class WikiViewController: UIViewController, UIWebViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    		
     
     // MARK: - UIWebViewDelegate
     func webViewDidFinishLoad(webView: UIWebView) {
