@@ -16,29 +16,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
+
         // Create model instance
         /*
         let jabbaUrl = NSBundle.mainBundle().URLForResource("jabba.caf")!
         let jabbaSound = NSData(contentsOfURL: jabbaUrl)!
-        
-        let model = StarWarsCharacter(firstName: "Jabba", lastName: "Desilijic Tiure", 
-            alias: "Jabba the Hutt", soundData: jabbaSound, 
-            photo: UIImage(named: "jabba.jpg")!, 
+
+        let model = StarWarsCharacter(firstName: "Jabba", lastName: "Desilijic Tiure",
+            alias: "Jabba the Hutt", soundData: jabbaSound,
+            photo: UIImage(named: "jabba.jpg")!,
             url: NSURL(string: "https://en.wikipedia.org/wiki/Jabba_the_Hutt")!,
             affiliation: .jabbaCriminalEmpire)
 */
-        
+
         // Create window
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        
+
         do {
             var json = try loadFromLocalFile(fileName: "regularCharacters.json")
-            
+
             json.appendContentsOf(try loadFromLocalFile(fileName: "forceSensitives.json"))
-            
+
             var chars = [StarWarsCharacter]()
-            
+
             for dict in json {
                 do {
                     let char = try decode(starWarsCharacter: dict)
@@ -47,57 +47,57 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     print ("Error processing \(dict)")
                 }
             }
-            
+
             // Can ceate model
             let model = StarWarsUniverse(characteres: chars)
-                
+
             // Create VC
             let uVC = UniverseViewController(model: model)
-                
+
             // Put in nav
             let uNav = UINavigationController(rootViewController: uVC)
-            
+
             // Create character VC
             let charVC = CharacterViewController(model: model.character(atIndex: 0, forAffiliation: .rebelAlliance))
-            
+
             // Put in another navigation
             let charNav = UINavigationController(rootViewController: charVC)
-            
+
             // Create splitview with two navs
             let splitVC = UISplitViewController()
             splitVC.viewControllers = [uNav, charNav]
-            
+
             // Assign nav as rootVC
             window?.rootViewController = splitVC
-            
+
             // Assign delegates
             uVC.delegate = charVC
-            
-            
+
+
             // Make visible & key to window
             window?.makeKeyAndVisible()
-                
+
         } catch {
             fatalError("Error while loading json")
         }
-        
+
         /*
         // Create window
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        
+
         // Create VC
         let vc = CharacterViewController(model: model)
-        
+
         // Insert in navigation
         let nav = UINavigationController(rootViewController: vc)
-        
+
         // Assign nav as rootVC
         window?.rootViewController = nav
 
         // Make visible & key to window
         window?.makeKeyAndVisible()
         */
-        
+
         return true
     }
 

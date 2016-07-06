@@ -9,7 +9,7 @@
 import Foundation
 
 enum StarWarsAffiliation : String {
-    
+
     case galacticEmpire = "Galactic Empire"
     case rebelAlliance = "Rebel Alliance"
     case firstOrder = "First Order"
@@ -18,7 +18,7 @@ enum StarWarsAffiliation : String {
 
     static func byName(name: String) -> StarWarsAffiliation {
         let aff: StarWarsAffiliation
-        
+
         switch name {
             case "Galactic Empire":
                 aff = .galacticEmpire
@@ -31,15 +31,15 @@ enum StarWarsAffiliation : String {
             default:
             aff = .unknown
         }
-        
+
         return aff
     }
-    
+
     static func byName(name: String?) -> StarWarsAffiliation {
         guard case .Some(let affiliationName) = name else {
             return .unknown
         }
-        
+
         return byName(affiliationName)
     }
 }

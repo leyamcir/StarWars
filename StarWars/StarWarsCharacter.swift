@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
  class StarWarsCharacter : Comparable {
-    
+
     // MARK: Stored properties
     let firstName : String?
     let lastName : String?
@@ -19,26 +19,26 @@ import UIKit
     let photo : UIImage
     let url : NSURL
     let affiliation : StarWarsAffiliation
-    
+
     // MARK: - Computed properties
     var name : String? {
         get {
             guard let first = firstName else {
                 return lastName
             }
-            
+
             guard let last = lastName else {
                 return  first
             }
-            
+
             return "\(first) \(last)"
         }
     }
-    
+
     //MARK: - Initialization
     init(firstName : String?, lastName : String?, alias: String?,
         soundData : NSData, photo: UIImage, url: NSURL, affiliation: StarWarsAffiliation){
-            
+
             self.firstName = firstName
             self.lastName = lastName
             self.alias = alias
@@ -47,7 +47,7 @@ import UIKit
             self.url = url
             self.affiliation = affiliation
     }
-    
+
     convenience init (alias : String?, soundData: NSData, photo: UIImage,
         url: NSURL, affiliation: StarWarsAffiliation) {
             self.init(firstName : nil, lastName : nil, // sintactic sugar, it's an empty optional
@@ -55,14 +55,14 @@ import UIKit
                 soundData : soundData, photo: photo,
                 url: url, affiliation: affiliation)
     }
-    
+
     //MARK: - Proxies
     var proxyForComparison : String{
         get {
             return "\(firstName)\(lastName)\(alias)\(url)"
         }
     }
-    
+
     var proxyForSorting: String {
         get {
             return proxyForComparison
@@ -86,12 +86,12 @@ extension StarWarsCharacter {
 // MARK: - Equatable
  func ==(lhs: StarWarsCharacter,
     rhs: StarWarsCharacter) -> Bool {
-        
+
         guard (lhs !== rhs) else {
             return true
         }
     return lhs.proxyForComparison == rhs.proxyForComparison
-        
+
 }
 
  func <(lhs: StarWarsCharacter,
